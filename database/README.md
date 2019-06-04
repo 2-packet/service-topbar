@@ -1,17 +1,12 @@
 ## RESTful API Docs
 > Table of Contents
-| Table of Contents |
-  ---
-| [POST](#POST) |
-| [GET](#GET) |
-| [PUT](#PUT) |
-| [DELETE](#DELETE) |
 
 1. [POST](#POST)
 1. [GET](#GET)
 1. [PUT](#PUT)
 1. [DELETE](#DELETE)
 
+---
 
 ## POST
 
@@ -28,7 +23,7 @@ app.post('/restaurant', (req, res) => {
 });
 ```
 
-Server will invoke the database code shown below.
+Server will invoke the database code shown below. This function will make a query that ***creates*** a table row using the provided data.
 
 >DATABASE CODE:
 ```
@@ -80,7 +75,8 @@ app.put('/restaurant/:id', (req, res) => {
 		.catch(() => res.status(500).send('Could not update restaurant.'));
 });
 ```
-Server will invoke the database code shown below.
+
+Server will invoke the database code shown below. This function will make a query that ***updates*** the table row matching the provided id.
 
 >DATABASE CODE:
 ```
@@ -103,7 +99,6 @@ Endpoint: `http://ip:port/restaurant`
 
 This endpoint accepts an [object](#AUTHDATA) on the request. Responds with 200 success code or 500 server error code.
 
-
 >SERVER CODE:
 ```
 app.delete('/restaurant', (req, res) => {
@@ -119,6 +114,21 @@ app.delete('/restaurant', (req, res) => {
 		.catch(() => res.status(500).send('Could not delete restaurant.'));
 });
 ```
+
+Server will invoke the database code shown below. This function will make a query that ***deletes*** the table row matching the provided id.
+
+>DATABASE CODE:
+```
+const Delete = (id) => {
+	return new Promise((resolve, reject) => {
+		Search.destroy({ where: { id } })
+			.then(({ dataValues }) => resolve(dataValues))
+			.catch(() => reject());
+	});
+};
+```
+
+---
 
 ## DATA
 > Used with: [POST](#POST) [PUT](#PUT)
