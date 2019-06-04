@@ -9,6 +9,14 @@
 
 ## POST
 
+
+
+## GET
+
+Endpoint: `http://ip:port/search`
+
+This endpoint takes accepts no data and responds with all database rows.
+
 ```
 app.get('/search', (req, res) => {
 	console.log(req.params.name);
@@ -22,8 +30,6 @@ app.get('/search', (req, res) => {
 		});
 });
 ```
-
-## GET
 
 ## PUT
 
