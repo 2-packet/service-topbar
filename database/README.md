@@ -115,7 +115,7 @@ app.delete('/restaurant', (req, res) => {
 ```
 
 ## DATA
-> Used with: `[POST](#POST)` `[PUT](#PUT)`
+> Used with: [POST](#POST) [PUT](#PUT)
 ```
 {
   restaurants: String,
@@ -125,7 +125,7 @@ app.delete('/restaurant', (req, res) => {
 ```
 
 ## AUTHDATA
-> Used with: `[DELETE](#DELETE)`
+> Used with: [DELETE](#DELETE)
 ```
 {
   idToDelete: Number,
