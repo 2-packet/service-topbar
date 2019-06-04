@@ -23,7 +23,8 @@ app.post('/restaurant', (req, res) => {
 });
 ```
 
-Server will invoke the database code shown below. This function will make a query that ***creates*** a table row using the provided data.
+>**Server will invoke the database code shown below.** 
+This function will make a query that ***creates*** a table row using the provided data.
 
 >DATABASE CODE:
 ```
@@ -76,7 +77,8 @@ app.put('/restaurant/:id', (req, res) => {
 });
 ```
 
-Server will invoke the database code shown below. This function will make a query that ***updates*** the table row matching the provided id.
+>**Server will invoke the database code shown below.** 
+This function will make a query that ***updates*** the table row matching the provided id.
 
 >DATABASE CODE:
 ```
@@ -115,7 +117,8 @@ app.delete('/restaurant', (req, res) => {
 });
 ```
 
-Server will invoke the database code shown below. This function will make a query that ***deletes*** the table row matching the provided id.
+>**Server will invoke the database code shown below.** 
+This function will make a query that ***deletes*** the table row matching the provided id.
 
 >DATABASE CODE:
 ```
