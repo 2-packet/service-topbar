@@ -11,7 +11,7 @@
 
 Endpoint: `http://ip:port/restaurant`
 
-This endpoint takes accepts an [object](#DATA) and responds with all database rows.
+This endpoint accepts an [object](#DATA) and responds with all database rows.
 
 >SERVER CODE:
 ```
@@ -43,7 +43,7 @@ const Insert = (data) => {
 
 Endpoint: `http://ip:port/search`
 
-This endpoint takes accepts no data and responds with all database rows.
+This endpoint accepts no data and responds with all database rows.
 
 >SERVER CODE:
 ```
@@ -62,9 +62,9 @@ app.get('/search', (req, res) => {
 
 ## PUT
 
-Endpoint: `http://ip:port/search`
+Endpoint: `http://ip:port/restaurant/:id`
 
-This endpoint takes accepts no data and responds with all database rows.
+This endpoint takes accepts an [object](#DATA) on the request body and a id parameter that will be used to identify the database entry that will be updated. Responds with 201 success code or 500 server error code.
 
 >SERVER CODE:
 ```
@@ -74,6 +74,7 @@ app.put('/restaurant/:id', (req, res) => {
 		.catch(() => res.sendStatus(500));
 });
 ```
+Server will invoke the database code shown below.
 
 >DATABASE CODE:
 ```
@@ -91,6 +92,7 @@ const Update = (data, id) => {
 ```
 
 ## DELETE
+
 
 ## DATA
 
