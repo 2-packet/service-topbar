@@ -25,9 +25,9 @@ app.post('/restaurant', (req, res) => {
 
 >**Server will invoke the database code shown below.** 
 
-This function will make a query that ***creates*** a table row using the provided data.
-
 >DATABASE CODE:
+
+This function will make a query that ***creates*** a table row using the provided data.
 ```
 const Insert = (data) => {
 	return new Promise((resolve, reject) => {
@@ -80,9 +80,9 @@ app.put('/restaurant/:id', (req, res) => {
 
 >**Server will invoke the database code shown below.** 
 
-This function will make a query that ***updates*** the table row matching the provided id.
-
 >DATABASE CODE:
+
+This function will make a query that ***updates*** the table row matching the provided id.
 ```
 const Update = (data, id) => {
 	return new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ app.delete('/restaurant', (req, res) => {
 
 >**Server will invoke the database code shown below.** 
 
-This function will make a query that ***deletes*** the table row matching the provided id.
-
 >DATABASE CODE:
+
+This function will make a query that ***deletes*** the table row matching the provided id.
 ```
 const Delete = (id) => {
 	return new Promise((resolve, reject) => {
