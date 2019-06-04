@@ -1,6 +1,7 @@
 ## RESTful API Docs
 > Table of Contents
-
+| Table of Contents |
+  ---
 | [POST](#POST) |
 | [GET](#GET) |
 | [PUT](#PUT) |
