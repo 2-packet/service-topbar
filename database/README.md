@@ -17,8 +17,8 @@ This endpoint accepts an [object](#DATA) and responds with all database rows.
 ```
 app.post('/restaurant', (req, res) => {
 	Insert(req.body)
-		.then(() => res.sendStatus(201))
-		.catch(() => res.sendStatus(500));
+		.then(() => res.status(201).send('Restaurant created.'))
+		.catch(() => res.status(500).send('Could not create restaurant.'));
 });
 ```
 
@@ -55,7 +55,7 @@ app.get('/search', (req, res) => {
 			res.status(200).send(data);
 		})
 		.catch((err) => {
-			console.log('server err from db', err);
+			console.status(500).send('Database failed to retrieve data.');
 		});
 });
 ```
@@ -70,8 +70,8 @@ This endpoint accepts an [object](#DATA) on the request body and an id parameter
 ```
 app.put('/restaurant/:id', (req, res) => {
 	Update(req.body, req.params.id)
-		.then(() => res.sendStatus(201))
-		.catch(() => res.sendStatus(500));
+		.then(() => res.status(200).send('Restaurant updated.'))
+		.catch(() => res.status(500).send('Could not update restaurant.'));
 });
 ```
 Server will invoke the database code shown below.
@@ -93,12 +93,42 @@ const Update = (data, id) => {
 
 ## DELETE
 
-## DATA
+Endpoint: `http://ip:port/restaurant`
 
+This endpoint accepts an [object](#AUTHDATA) on the request. Responds with 200 success code or 500 server error code.
+
+
+>SERVER CODE:
+```
+app.delete('/restaurant', (req, res) => {
+	const { idToDelete, authenticated } = req.body;
+
+	if (!authenticated) {
+		res.status(403).send('Authentication failed.');
+		return;
+	}
+
+	Delete(idToDelete)
+		.then(() => res.status(200).send('Restaurant deleted.'))
+		.catch(() => res.status(500).send('Could not delete restaurant.'));
+});
+```
+
+## DATA
+> Used with: `[POST](#POST)` `[PUT](#PUT)`
 ```
 {
-  restaurants: name,
-  locations: location,
-  cuisines: cuisine
+  restaurants: String,
+  locations: String,
+  cuisines: String
+}
+```
+
+## AUTHDATA
+> Used with: `[DELETE](#DELETE)`
+```
+{
+  idToDelete: Number,
+  authenticated: Boolean
 }
 ```
