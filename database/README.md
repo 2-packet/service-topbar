@@ -11,7 +11,7 @@
 
 Endpoint: `http://ip:port/restaurant`
 
-This endpoint takes accepts an [object](#DATA SHAPE) and responds with all database rows.
+This endpoint takes accepts an [object](#DATA) and responds with all database rows.
 
 >SERVER CODE:
 ```
@@ -53,7 +53,7 @@ app.get('/search', (req, res) => {
 
 ## DELETE
 
-## DATA SHAPE
+## DATA
 
 ```
 {
