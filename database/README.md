@@ -9,6 +9,20 @@
 
 ## POST
 
+```
+app.get('/search', (req, res) => {
+	console.log(req.params.name);
+
+	Search.findAll({ attributes: ['restaurants', 'cuisines', 'locations'] })
+		.then((data) => {
+			res.status(200).send(data);
+		})
+		.catch((err) => {
+			console.log('server err from db', err);
+		});
+});
+```
+
 ## GET
 
 ## PUT
