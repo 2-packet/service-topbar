@@ -62,6 +62,34 @@ app.get('/search', (req, res) => {
 
 ## PUT
 
+Endpoint: `http://ip:port/search`
+
+This endpoint takes accepts no data and responds with all database rows.
+
+>SERVER CODE:
+```
+app.put('/restaurant/:id', (req, res) => {
+	Update(req.body, req.params.id)
+		.then(() => res.sendStatus(201))
+		.catch(() => res.sendStatus(500));
+});
+```
+
+>DATABASE CODE:
+```
+const Update = (data, id) => {
+	return new Promise((resolve, reject) => {
+		Search.update({
+			restaurants: data.restaurants,
+			locations: data.locations,
+			cuisines: data.cuisines
+		}, { where: { id } })
+			.then(({ dataValues }) => resolve(dataValues))
+			.catch(() => reject());
+	});
+};
+```
+
 ## DELETE
 
 ## DATA
