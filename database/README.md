@@ -120,7 +120,7 @@ app.delete('/restaurant', (req, res) => {
 >**Server will invoke the database code shown below.** 
 
 >DATABASE CODE:
-This function will make a query that ***deletes*** the table row matching the provided id.
+>This function will make a query that ***deletes*** the table row matching the provided id.
 ```
 const Delete = (id) => {
 	return new Promise((resolve, reject) => {
