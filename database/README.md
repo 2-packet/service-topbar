@@ -125,7 +125,7 @@ This function will make a query that ***deletes*** the table row matching the pr
 
 >DATABASE CODE:
 ```
->const Delete = (id) => {
+const Delete = (id) => {
 	return new Promise((resolve, reject) => {
 		Search.destroy({ where: { id } })
 			.then(({ dataValues }) => resolve(dataValues))
