@@ -1,6 +1,11 @@
 ## RESTful API Docs
 > Table of Contents
 
+| [POST](#POST) |
+| [GET](#GET) |
+| [PUT](#PUT) |
+| [DELETE](#DELETE) |
+
 1. [POST](#POST)
 1. [GET](#GET)
 1. [PUT](#PUT)
@@ -11,7 +16,7 @@
 
 Endpoint: `http://ip:port/restaurant`
 
-This endpoint accepts an [object](#DATA) and responds with all database rows.
+This endpoint accepts an [object](#DATA) and responds with 201 success code.
 
 >SERVER CODE:
 ```
