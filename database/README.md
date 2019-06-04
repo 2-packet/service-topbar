@@ -64,7 +64,7 @@ app.get('/search', (req, res) => {
 
 Endpoint: `http://ip:port/restaurant/:id`
 
-This endpoint takes accepts an [object](#DATA) on the request body and a id parameter that will be used to identify the database entry that will be updated. Responds with 201 success code or 500 server error code.
+This endpoint accepts an [object](#DATA) on the request body and a id parameter that will be used to identify the database entry that will be updated. Responds with 201 success code or 500 server error code.
 
 >SERVER CODE:
 ```
@@ -92,7 +92,6 @@ const Update = (data, id) => {
 ```
 
 ## DELETE
-
 
 ## DATA
 
