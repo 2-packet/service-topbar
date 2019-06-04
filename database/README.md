@@ -25,6 +25,8 @@ app.post('/restaurant', (req, res) => {
 
 >**Server will invoke the database code shown below.** 
 
+
+
 >DATABASE CODE:
 
 This function will make a query that ***creates*** a table row using the provided data.
@@ -80,6 +82,8 @@ app.put('/restaurant/:id', (req, res) => {
 
 >**Server will invoke the database code shown below.** 
 
+
+
 >DATABASE CODE:
 
 This function will make a query that ***updates*** the table row matching the provided id.
@@ -120,6 +124,8 @@ app.delete('/restaurant', (req, res) => {
 ```
 
 >**Server will invoke the database code shown below.** 
+
+
 
 >DATABASE CODE:
 
