@@ -46,9 +46,9 @@ const Insert = (data) => {
 
 ## GET
 
-Endpoint: `http://ip:port/search`
+Endpoint: `http://ip:port/autocomplete?autocomplete=query`
 
-This endpoint accepts no data and responds with all database rows.
+This endpoint accepts data in the form of a query and responds with all database rows including the query.
 
 >SERVER CODE:
 ```
