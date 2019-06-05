@@ -12,7 +12,7 @@
 
 Endpoint: `http://ip:port/restaurant`
 
-This endpoint accepts an [object](#DATA) and responds with 201 success code.
+This endpoint accepts an [object](#DATA). Responds with 201 success code or 500 server error code.
 
 >SERVER CODE:
 ```
@@ -48,21 +48,37 @@ const Insert = (data) => {
 
 Endpoint: `http://ip:port/autocomplete?autocomplete=query`
 
-This endpoint accepts data in the form of a query and responds with all database rows including the query.
+This endpoint accepts data in the form of a query and responds with all database rows including the query. Responds with 200 success code or 500 server error code.
 
 >SERVER CODE:
 ```
-app.get('/search', (req, res) => {
-	console.log(req.params.name);
-
-	Search.findAll({ attributes: ['restaurants', 'cuisines', 'locations'] })
-		.then((data) => {
-			res.status(200).send(data);
-		})
-		.catch((err) => {
-			console.status(500).send('Database failed to retrieve data.');
-		});
+app.get('/autocomplete', (req, res) => {
+	Autocomplete(req.query.autocomplete)
+		.then(dbResult => res.status(200).send(dbResult))
+		.catch(() => res.status(404).send('No data matched the search query.'));
 });
+
+```
+
+>**Server will invoke the database code shown below.** 
+
+
+
+>DATABASE CODE:
+
+This function will make a query that ***retrieves*** the table rows with data including the substring provided.
+```
+const Update = (data, id) => {
+	return new Promise((resolve, reject) => {
+		Search.update({
+			restaurants: data.restaurants,
+			locations: data.locations,
+			cuisines: data.cuisines
+		}, { where: { id } })
+			.then(({ dataValues }) => resolve(dataValues))
+			.catch(() => reject());
+	});
+};
 ```
 
 ## PUT
