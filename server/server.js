@@ -29,8 +29,8 @@ app.get('/search', (req, res) => {
 		});
 });
 
-app.get('/autocomplete', (req, res) => {
-	Autocomplete(req.query.autocomplete)
+app.get('/search', (req, res) => {
+	Autocomplete(req.query.query)
 		.then(dbResult => res.status(200).send(dbResult))
 		.catch(() => res.status(404).send('No data matched the search query.'));
 });

@@ -46,14 +46,14 @@ const Insert = (data) => {
 
 ## GET
 
-Endpoint: `http://ip:port/autocomplete?autocomplete=query`
+Endpoint: `http://ip:port/search?query=key`
 
 This endpoint accepts data in the form of a query and responds with all database rows including the query. Responds with 200 success code or 500 server error code.
 
 >SERVER CODE:
 ```
-app.get('/autocomplete', (req, res) => {
-	Autocomplete(req.query.autocomplete)
+app.get('/search', (req, res) => {
+	Autocomplete(req.query.query)
 		.then(dbResult => res.status(200).send(dbResult))
 		.catch(() => res.status(404).send('No data matched the search query.'));
 });
