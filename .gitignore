@@ -28,5 +28,5 @@ dist/
 
 public/bundle.js
 
-
+*.csv
 

@@ -17,7 +17,7 @@ function gen(writer, data, encoding, callback) {
     do {
       i--;
       // let data = `${i}, ${faker.company.companyName()},${faker.address.city()},${faker.address.country()}\n`;
-      let data = `${i},${casual.word},${casual.city},${casual.country}\n`;
+      let data = `${i},${casual.word + i},${casual.city},${casual.country}\n`;
 
       if (i === 0) {
         // last time!
@@ -39,7 +39,7 @@ function gen(writer, data, encoding, callback) {
   }
 }
 
-gen(fs.createWriteStream('data-10mil.csv'), 'utf8', () => {});
+gen(fs.createWriteStream('data-10mil.csv'), 'utf8', () => { });
 
 // {
 //   id: i,

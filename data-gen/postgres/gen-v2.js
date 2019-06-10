@@ -40,10 +40,3 @@ function gen(writer, data, encoding, callback) {
 }
 
 gen(fs.createWriteStream('data-100mil.csv'), 'utf8', () => {});
-
-// {
-//   id: i,
-//   restaurant: faker.company.companyName(),
-//   location: faker.address.city(),
-//   cuisine: faker.address.country(),
-// }
