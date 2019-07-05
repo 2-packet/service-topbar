@@ -1,6 +1,6 @@
-# Project Name
+# Search Bar
 
-> Project description
+> Restaurant reservation website search bar.
 
 FreeSeats
 
